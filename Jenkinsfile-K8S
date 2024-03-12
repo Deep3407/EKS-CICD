@@ -5,13 +5,13 @@ pipeline {
     }
     agent any
     environment {
-        registry = "150878085644.dkr.ecr.us-east-2.amazonaws.com/demo"
+        registry = "public.ecr.aws/y0c8y4p9/dkmino"
     }
    
     stages {
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/yasminjeelani/EKS-CICD.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Deep3407/EKS-CICD.git']]])     
             }
         }
       stage ('Build') {
